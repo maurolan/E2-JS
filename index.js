@@ -53,7 +53,7 @@ const pizzas = [
 // a)  Las pizzas que tengan un id impar.
 
 console.log(
-  "\n\n\nListado de pizzas con un id impar\n _________________________________________"
+  "\n\n\nA) Listado de pizzas con un id impar\n _________________________________________"
 );
 
 const pizzasIdImpar = pizzas.filter((pizza) => pizza.id % 2 == 1);
@@ -63,10 +63,10 @@ for (let value of pizzasIdImpar) {
 
 // b) Responder: ¿Hay alguna pizza que valga menos de $600?
 console.log(
-  "\n\n\nResponder: ¿Hay alguna pizza que valga menos de $600?\n _________________________________________"
+  "\n\n\nB) Responder: ¿Hay alguna pizza que valga menos de $600?\n _________________________________________"
 );
 
-const precioEco = 600;
+let precioEco = 600;
 const pizzasBaratas = pizzas.filter((pizza) => pizza.precio < precioEco);
 
 if (pizzasBaratas.length != 0) {  //Me fijo si hay alguna pizza que cumpla la condicion 
@@ -79,24 +79,26 @@ if (pizzasBaratas.length != 0) {  //Me fijo si hay alguna pizza que cumpla la co
 
 // c) El nombre de cada pizza con su respectivo precio.
 console.log(
-  "\n\n\nNOMBRE DE PIZZA\t\tPRECIO\n _________________________________________"
+  "\n\n\nC) NOMBRE DE PIZZA\tPRECIO\n _________________________________________\n"
 );
 
 pizzas.forEach((value) => {
-  console.log(value.nombre + "\t\t| $" + value.precio);
+  console.log(value.nombre.toUpperCase() + "\n|------------------->\t$" + value.precio + "\n\n");
 });
 
 // d) Todos los ingredientes de cada pizza (En cada iteración imprimir los ingredientes de la pizza que se esta recorriendo).
 
 console.log(
-  "\n\n\nTodos los ingredientes de cada pizza\n _________________________________________"
+  "\n\n\nD) Todos los ingredientes de cada pizza\n _________________________________________"
 );
 
 pizzas.forEach( pizza => {
-  console.log("| " + pizza.nombre + " |");
+  console.log("\n*** " + pizza.nombre.toUpperCase() + " ***");
   // console.log("Ingredientes: ");
+  let contador = 1;
   pizza.ingredientes.forEach( ingrediente => {
-    console.log(ingrediente);
+    console.log(contador + ") "+ingrediente);
+    contador++;
   });
-  console.log("==========================");
+  console.log("\n==========================");
 });
